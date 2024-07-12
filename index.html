@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crud System</title>
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="icon" href="./images/profile.png">
+</head>
+<body>
+
+  <div class="w-75 mx-auto bg-info   rounded p-2 my-2">
+    <h1 class="bgtext-center">CRUD SYSTEM</h1>
+
+
+    <div class="form-floating my-3">
+      <input  oninput="validationInputs( this  , 'msgName')" type="text" class="form-control is-invalid" id="productName" placeholder="">
+      <label for="productName">Product Name</label>
+      <p id="msgName" class="alert alert-danger d-none">Invalid Paatern</p>
+    </div>
+
+    <div class="form-floating my-3">
+      <input   oninput="validationInputs( this  , 'msgPrice')" type="number" class="form-control is-invalid" id="productPrice" placeholder="">
+      <label for="productPrice">Product Price</label>
+      <p id="msgPrice" class="alert alert-danger d-none">Invalid Paatern</p>
+    </div>
+
+
+
+    <div class="form-floating my-3">
+      <textarea   oninput="validationInputs( this  , 'msgDesc')" style="height: 100px;"  class="form-control is-invalid" id="productDesc" placeholder=""></textarea>
+      <label for="productDesc">Product Description</label>
+      <p id="msgDesc" class="alert alert-danger d-none">Invalid Paatern</p>
+    </div>
+
+
+    <div class="form-floating my-3">
+      <input  type="file" class="form-control is-invalid" id="productImage" placeholder="">
+      <label for="productImage">Product Image</label>
+      <p id="msgImg" class="alert alert-danger d-none">Invalid Paatern</p>
+    </div>
+
+    <div class="form-floating my-3">
+      <input list="category" oninput="validationInputs( this  , 'msgCat')"   type="text" class="form-control is-invalid" id="productCat" placeholder="">
+      <label for="productCat">Product Category</label>
+      <datalist id="category">
+        <option value="TV">TV</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Labtop">Labtop</option>
+      </datalist>
+      <p id="msgCat" class="alert alert-danger d-none">Invalid Paatern</p>
+    </div>
+    <button onclick="addProduct()"  id="btnAdd" class="btn btn-primary">Add Product</button>
+    <button id="btnUpdate" class="btn btn-warning d-none">Update Product</button>
+  </div>
+  <div>
+
+    <input id="searchInput" oninput="displayData()" type="search" class="form-control w-50 mx-auto my-2" placeholder="search by name">
+    <table class="table table-bordered table-dark w-75 table-striped text-center mx-auto my-2">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableData">
+        <!-- <tr>
+          <td>1</td>
+          <td>Iphone</td>
+          <td>7000</td>
+          <td>Mobile</td>
+          <td>GOOD</td>
+          <td>
+            <img width="100px"  src="./images/work-6.jpg" alt="product">
+          </td>
+          <td><button class="btn btn-warning btn-sm">Update</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+          
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
